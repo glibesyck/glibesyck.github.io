@@ -40,7 +40,15 @@ defaults:
     values:
       lang: "pt"
   - scope:
+      path: "ua"
+    values:
+      lang: "ua"
+  - scope:
       path: "en/lessons"
+    values:
+      lesson: true
+  - scope:
+      path: "ua/lessons"
     values:
       lesson: true
   - scope:
