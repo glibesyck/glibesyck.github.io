@@ -1,11 +1,13 @@
 ---
 title: |
-    Exploring and Analyzing Network Data with Python
+    Дослідження та аналіз мережевих даних за допомогою Python
 authors:
 - John R. Ladd
 - Jessica Otis
 - Christopher N. Warren
 - Scott Weingart
+collection: lessons
+layout: lesson
 date: 2017-06-16
 reviewers:
 - Elisa Beshero-Bondar
@@ -14,9 +16,9 @@ reviewers:
 editors:
 - Brandon Walsh
 translator:
-- Hugo Bonin
+- Орися Віра
 translation-editor:
-- Sofia Papastamkou
+- Гліб Солоджук
 difficulty: 2
 review-ticket: https://github.com/programminghistorian/ph-submissions/issues/92
 layout: lesson
@@ -25,35 +27,35 @@ slug: exploring-and-analyzing-network-data-with-python
 activity: analyzing
 topics: [network-analysis]
 date: 2017-08-23
-abstract: "This lesson introduces network metrics and how to draw conclusions from them when working with humanities data. You will learn how to use the NetworkX Python package to produce and work with these network statistics."
-redirect_from: /lessons/exploring-and-analyzing-network-data-with-python
+abstract: "Цей урок представляє мережеві метрики та те, як робити висновки з них під час роботи з гуманітарними даними. Ви дізнаєтесь, як використовувати пакет NetworkX Python для створення та роботи з цією мережевою статистикою."
+# redirect_from: /lessons/exploring-and-analyzing-network-data-with-python
 avatar_alt: Train tracks intersecting
 doi: 10.46430/phen0064
 ---
 
 {% include toc.html %}
 
-# Introduction
+# Вступ
 
-## Lesson Goals
+## Цілі уроку
 
-In this tutorial, you will learn:
+У цьому уроці ви дізнаєтесь:
 
-- To use the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) package for working with network data in [**Python**](/lessons/introduction-and-installation); and
-- To analyze humanities network data to find:
-  - Network structure and path lengths,
-  - Important or central nodes, and
-  - Communities and subgroups
+- Як використовувати пакет [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) для роботи з мережевими даними в [**Python**](/lessons/introduction-and-installation); і
+- Як аналізувати дані гуманітарної мережі, щоб знайти:
+  - Структуру мережі та довжину шляху,
+  - Важливі або центральні вершини, і
+  - Спільноти та підгрупи.
 
-**n.b.:** This is a tutorial for exploring network statistics and metrics. We will therefore focus on ways to analyze, and draw conclusions from, networks without visualizing them. You'll likely want a combination of visualization and network metrics in your own project, and so we recommend this article as a companion to [this earlier Programming Historian tutorial](/lessons/creating-network-diagrams-from-historical-sources).
+**n.b.:** це урок для вивчення статистики та метрики-показників мережі. Тому ми зосередимося на способах аналізу та висновків? з мереж, не візуалізуючи їх. Ймовірно, вам знадобиться поєднання візуалізації та мережевих метрик-показників у вашому власному проекті, тому ми рекомендуємо цю статтю як додаток до [цього попереднього уроку Programming Historian](/lessons/creating-network-diagrams-from-historical-sources).
 
-## Prerequisites
+## Пререквізити
 
-This tutorial assumes that you have:
+Цей урок передбачає, що у вас є:
 
-- a basic familiarity with networks and/or have read ["From Hermeneutics to Data to Networks: Data Extraction and Network Visualization of Historical Sources"](/lessons/creating-network-diagrams-from-historical-sources) by Martin Düring here on _Programming Historian_;
-- Installed Python 3, not the Python 2 that is installed natively in Unix-based operating systems such as Macs (If you need assistance installing Python 3, check out the [Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/starting/installation/)); and
-- Installed the `pip` package installer.[^pipinstall]
+- базове знайомство з мережами та/або ви попередньо прочитали [«Від герменевтики до даних до мереж: вилучення даних і мережева візуалізація історичних джерел»](/lessons/creating-network-diagrams-from-historical-sources) Мартіна Дюрінґа тут, на _Programming Historian_ ;
+- встановлено Python 3, а не Python 2, який попередньо встановлений в операційних системах на базі Unix, наприклад Mac (якщо вам потрібна допомога з інсталяцією Python 3, перегляньте [«Посібник автостопом по Python»](http://docs.python-guide.org/en/latest/starting/installation/)); і
+- встановлено інсталятор пакетів `pip`.[^pipinstall]
 
 It's possible to have two versions of Python (2 _and_ 3) installed on your computer at one time. For this reason, when accessing Python 3 you will often have to explicitly declare it by typing `python3` and `pip3` instead of simply `python` and `pip`. Check out the _Programming Historian_ tutorials on [installing Python](/lessons/introduction-and-installation) and [working with pip](/lessons/installing-python-modules-pip) for more information.
 
