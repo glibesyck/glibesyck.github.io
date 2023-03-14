@@ -602,6 +602,9 @@ donation-alert:
   pt: |
     ## Faça uma doação!
     Tutoriais de qualidade em acesso aberto têm custos de produção. Junte-se ao crescente número de pessoas que [apoia o _Programming Historian_](https://www.patreon.com/theprogramminghistorian) para que possamos continuar a partilhar o conhecimento gratuitamente.
+  ua: |
+    ## Donate today!
+    Great Open Access tutorials cost money to produce. Join the growing number of people [supporting _Programming Historian_](https://www.patreon.com/theprogramminghistorian) so we can continue to share knowledge free of charge.
 
 donation-banner:
     en: |
@@ -612,6 +615,8 @@ donation-banner:
       <h2><a href="https://www.patreon.com/theprogramminghistorian" class="alert-link">Vous pouvez faire un don au <i>Programming Historian</i></a></h2>
     pt: |
       <h2><a href="https://www.patreon.com/theprogramminghistorian" class="alert-link">Pode fazer uma doação ao <i>Programming Historian</i></a></h2>
+    ua: |
+      <h2><a href="https://www.patreon.com/theprogramminghistorian" class="alert-link">Donate to <i>Programming Historian</i> today!</a></h2>
 
 
 # Partnership information, for when a lesson is the product of a specific partnership (i.e., PH/Jisc/TNA)
