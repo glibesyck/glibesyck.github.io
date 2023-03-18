@@ -40,7 +40,8 @@ Color Styles
 @media screen {
 
   body {
-    font-family: 'Quattrocento', Verdana, sans-serif;
+    /* font-family: 'Quattrocento', Verdana, sans-serif;  */
+    font-family: 'Quattrocento', 'Playfair Display', sans-serif; 
     font-size:16px;
     background-color: var(--bg-color);
   }

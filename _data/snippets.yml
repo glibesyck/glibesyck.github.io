@@ -811,27 +811,32 @@ project-team-roles:
   es: Papel en el equipo del proyecto
   fr: Rôles et responsabilités de l'équipe du projet
   pt: Funções da equipe no projeto
+  ua: Project Team Roles
 
 present:
   en: Present
   es: Presente
   fr: Présent
   pt: Presente
+  ua: Present
 volume-start:
   en: 2012
   es: 2017
   fr: 2019
   pt: 2021
+  ua: 2023
 suggested-citation:
   en: Suggested Citation
   es: Cita sugerida
   fr: Pour citer
   pt: Citação sugerida
+  ua: Suggested Citation
 journal-title:
   en: Programming Historian
   es: Programming Historian en español
   fr: Programming Historian en français
   pt: Programming Historian em português
+  ua: Programming Historian
 journal-subtitle: # ENGLISH ONLY FOR NOW, DO NOT TRANSLATE
   en: The initial English version
 title-open-quote:
@@ -851,44 +856,54 @@ available-lesson:
   es: Disponible en
   fr: Disponible en
   pt: Disponível em
+  ua: Available in
 language-name:
   en:
     en: English
     es: inglés
     fr: anglais
     pt: inglês
+    ua: English
   pt:
     en: Portuguese
     es: portugués
     fr: portugais
     pt: português
+    ua: Portuguese
   es:
     en: Spanish
     es: español
     fr: espagnol
     pt: espanhol
+    ua: Spanish
   fr:
     en: French
     es: francés
     fr: français
     pt: francês
+    ua: French
+  ua:
+    en: Ukrainian
+    ua: Ukrainian
 original:
   en: original
   es: original
   fr: originale
   pt: original
+  en: original
 language-name-abbreviation:
     en: EN
     es: ES
     fr: FR
     pt: PT
-    ua: EN
+    ua: UA
 
 peer-review:
   en: Peer-reviewed
   es: Revisado por pares
   fr: Évaluée par les pairs
   pt: Avaliada por pares
+  ua: Peer-reviewed
 
 # Author Info
 about-the:
