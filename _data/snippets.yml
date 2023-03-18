@@ -4,6 +4,7 @@ language-list:
   - es
   - fr
   - pt
+  - ua
 
 # top nav bar
 menu-home:
@@ -11,11 +12,13 @@ menu-home:
   es: /es
   fr: /fr
   pt: /pt
+  ua: /ua
 menu-about:
     en: About
     es: Acerca
     fr: À propos
     pt: Sobre
+    ua: About
 menu-about-overview:
   en:
     title: About PH
@@ -29,6 +32,9 @@ menu-about-overview:
   pt:
     title: Sobre
     link: /pt/sobre
+  ua:
+    title: About PH
+    link: /en/about
 menu-about-team:
   en:
     title: Project Team
@@ -42,6 +48,9 @@ menu-about-team:
   pt:
     title: Equipe
     link: /pt/equipe
+  ua:
+    title: Project Team
+    link: /en/project-team
 menu-about-research:
   en:
     title: Research
@@ -55,6 +64,9 @@ menu-about-research:
   pt:
     title: Pesquisa
     link: /pt/pesquisa
+  ua:
+    title: Research
+    link: /en/research
 menu-about-vacancies:
   en:
     title: Vacancies
@@ -68,6 +80,9 @@ menu-about-vacancies:
   pt: 
     title: Vagas
     link: /pt/vagas
+  ua:
+    title: Vacancies
+    link: /en/vacancies
 menu-about-privacy:
   en:
     title: Privacy Policy
@@ -81,11 +96,15 @@ menu-about-privacy:
   pt:
     title: Política de privacidade
     link: /pt/politica-de-privacidade
+  ua:
+    title: Privacy Policy
+    link: /en/privacy-policy
 menu-contribute:
   en: Contribute
   es: Contribuciones
   fr: Contribuer
   pt: Contribuir
+  ua: Contribute
 menu-contribute-retirement:
   en:
     title: Lesson Retirement Policy
@@ -99,6 +118,9 @@ menu-contribute-retirement:
   pt:
     title: Política de remoção de lições
     link: /pt/licoes-politica-remocao
+  ua:
+    title: Lesson Retirement Policy
+    link: /en/lesson-retirement-policy
 menu-contribute-technical:
   en:
     title: Technical Contributions
@@ -111,6 +133,9 @@ menu-contribute-technical:
     link: https://github.com/programminghistorian/jekyll/wiki/Making-Technical-Contributions
   pt:
     title: Contribuições técnicas
+    link: https://github.com/programminghistorian/jekyll/wiki/Making-Technical-Contributions
+  ua:
+    title: Technical Contributions
     link: https://github.com/programminghistorian/jekyll/wiki/Making-Technical-Contributions
 menu-contribute-overview:
   en:
@@ -125,6 +150,9 @@ menu-contribute-overview:
   pt:
     title: Contribuições
     link: /pt/contribua
+  ua:
+    title: Overview
+    link: /en/contribute
 menu-contribute-feedback:
   en:
     title: Report a bug
@@ -138,6 +166,9 @@ menu-contribute-feedback:
   pt:
     title: Reportar um erro
     link: /pt/reportar-um-erro
+  ua:
+    title: Report a bug
+    link: /en/feedback
 menu-contribute-review:
   en:
     title: Reviewer Guidelines
@@ -151,6 +182,9 @@ menu-contribute-review:
   pt:
     title: Diretrizes para revisores
     link: /pt/directrizes-revisor
+  ua:
+    title: Reviewer Guidelines
+    link: /en/reviewer-guidelines
 menu-contribute-write:
   en:
     title: Author Guidelines
@@ -164,6 +198,9 @@ menu-contribute-write:
   pt:
     title: Diretrizes para autores
     link: /pt/directrizes-autor
+  ua:
+    title: Author Guidelines
+    link: /en/author-guidelines
 menu-contribute-translate:
   en:
     title: Translator Guidelines
@@ -177,6 +214,9 @@ menu-contribute-translate:
   pt:
     title: Diretrizes para tradutores
     link: /pt/directrizes-tradutor
+  ua:
+    title: Translator Guidelines
+    link: /en/translator-guidelines
 menu-contribute-edit:
   en:
     title: Editor Guidelines
@@ -190,6 +230,9 @@ menu-contribute-edit:
   pt:
     title: Diretrizes para editores
     link: /pt/directrizes-editor
+  ua:
+    title: Editor Guidelines
+    link: /en/editor-guidelines
 menu-contribute-support:
   en:
     title: Support Us
@@ -203,6 +246,9 @@ menu-contribute-support:
   pt:
     title: Apoie-nos
     link: /pt/apoie-nos
+  ua:
+    title: Support Us
+    link: /en/support-us
 menu-contribute-support-donate:
   en:
     title: Support Us - Donate to Us
@@ -216,6 +262,9 @@ menu-contribute-support-donate:
   pt:
     title: Apoie-nos - Doações
     link: /pt/apoie-nos#doacoes
+  ua:
+    title: Support Us - Donate to Us
+    link: /en/individual
 menu-lessons:
   en:
     title: Lessons
@@ -229,6 +278,9 @@ menu-lessons:
   pt:
     title: Lições
     link: /pt/licoes
+  ua:
+    title: Lessons
+    link: /en/lessons
 menu-events:
   en:
     title: Events
@@ -242,6 +294,9 @@ menu-events:
   pt:
     title: Eventos
     link: /pt/eventos
+  ua:
+    title: Events
+    link: /en/events
 menu-blog:
   en:
     title: Blog
@@ -255,11 +310,15 @@ menu-blog:
   pt:
     title: Blogue
     link: /blog
+  ua:
+    title: Blog
+    link: /blog
 menu-support-us:
   en: Support Us
   es: Apóyanos
   fr: Nous soutenir
   pt: Apoie-nos
+  ua: Support Us
 menu-support-ipp:
   en:
     title: Institutional Partnership Programme
@@ -273,6 +332,9 @@ menu-support-ipp:
   pt:
     title: Programa de Parceria Institucional
     link: /pt/ppi
+  ua:
+    title: Institutional Partnership Programme
+    link: /en/ipp
 menu-support-individual:
   en:
     title: Individual Supporters
@@ -286,6 +348,9 @@ menu-support-individual:
   pt: 
     title: Apoiadores individuais
     link: /pt/doacoes
+  ua:
+    title: Individual Supporters
+    link: /en/individual
 menu-support-supporters:
   en:
     title: Our Supporters
@@ -299,6 +364,9 @@ menu-support-supporters:
   pt:
     title: Nossos Apoiadores
     link: /pt/apoiadores
+  ua:
+    title: Our Supporters
+    link: /en/supporters
 menu-lang:
   es:
     title: es
@@ -312,6 +380,9 @@ menu-lang:
   pt:
     title: pt
     link: /pt
+  ua:
+    title: ua
+    link: /en
 menu-translation-concordance:
   es:
     title: Concordancia de traducción
@@ -325,12 +396,16 @@ menu-translation-concordance:
   pt:
     title: Concordância das traduções
     link: /translation-concordance
+  ua:
+    title: Translation Concordance
+    link: /translation-concordance
 
 issn:
   en: 2397-2068
   es: 2517-5769
   fr: 2631-9462
   pt: 2753-9296
+  ua: 0000-0000
 
 # site footer
 footer:
@@ -343,6 +418,8 @@ footer:
       Le _Programming Historian en français_ (ISSN: 2631-9462) est publié sous licence [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.fr).
     pt: |
       _The Programming Historian em português_ (ISSN: 2753-9296) é publicado com uma licença [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.pt).
+    ua: |
+      The _Programming Historian_ (ISSN: 2397-2068) is released under a [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.en) license.
   financial:
     en: |
       This project is administered by ProgHist Ltd, Charity Number [1195875](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5181272/charity-overview) and Company Number [12192946](https://find-and-update.company-information.service.gov.uk/company/12192946).
@@ -352,42 +429,51 @@ footer:
         Ce projet est administré par ProgHist Ltd, no d'organisation caritative [1195875](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5181272/charity-overview) et no de compagnie [12192946](https://find-and-update.company-information.service.gov.uk/company/12192946).
     pt: |
       Este projeto é administrado pelo ProgHist Ltd, com o número de instituição de caridade [1195875](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5181272/charity-overview) e número de companhia [12192946](https://find-and-update.company-information.service.gov.uk/company/12192946).
+    ua: |
+      This project is administered by ProgHist Ltd, Charity Number [1195875](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5181272/charity-overview) and Company Number [12192946](https://find-and-update.company-information.service.gov.uk/company/12192946).
 
   gh-hosted:
     en: Hosted on GitHub
     es: Alojado en GitHub
     fr: Site hébergé sur Github
     pt: Hospedado no GitHub
+    ua: Hosted on GitHub
   rev-history:
     en: See page history
     es: Versiones anteriores
     fr: Voir l'historique de la page
     pt: Histórico da página
+    ua: See page history
   last-updated:
     en: Site last updated
     es: Última actualización el
     fr: Dernière mise à jour le
     pt: Última atualização em
+    ua: Site last updated
   suggestion:
     en: Make a suggestion
     es: Envíanos tus comentarios
     fr: Faire une suggestion
     pt: Envie a sua sugestão
+    ua: Make a suggestion
   rss-feed:
     en: RSS feed subscriptions
     es: Suscripción a RSS
     fr: S'abonner au flux RSS
     pt: Subscrição RSS feed
+    ua: RSS feed subscriptions
   retirement: 
     en: Lesson retirement policy
     es: Política de retiro de lecciones
     fr: Politique de retrait des leçons
     pt: Política de remoção de lições
+    ua: Lesson retirement policy
   trans-concordance: 
     en: Translation concordance
     es: Concordancia de traducción
     fr: Concordance des traductions
     pt: Concordância das traduções
+    ua: Translation concordance
 
 # lesson-index
 reset-button:
@@ -467,46 +553,55 @@ editor:
   es: editado por
   fr: suivi éditorial par
   pt: editado por
+  ua: edited by
 reviewers:
   en: reviewed by
   es: revisado por
   fr: évaluation par
   pt: revisto por
+  ua: reviewed by
 translator:
   en: translated by
   es: traducido por
   fr: traduction par
   pt: traduzido por
+  ua: translated by
 translation-reviewers:
   en: translation reviewed by
   es: traducción revisada por
   fr: évaluation de traduction par
   pt: tradução revista por
+  ua: translation reviewed by
 translation-editors:
   en: translation edited by
   es: traducción editada por
   fr: suivi de traduction par
   pt: tradução editada por
+  ua: translation edited by
 lesson-testers:
   en: tested by
   es: testeado por
   fr: test par
   pt: testado por
+  ua: tested by
 published:
   en: published
   es: publicado
   fr: parution
   pt: publicado
+  ua: published
 translated-date:
   en: translated
   es: traducido
   fr: traduction
   pt: traduzido
+  ua: translated
 modified:
   en: modified
   es: modificado
   fr: modification
   pt: modificado
+  ua: modified
 retired-date:
   en: retired
   es: retirada
@@ -522,6 +617,7 @@ difficulty:
   es: dificultad
   fr: difficulté
   pt: dificuldade
+  ua: difficulty
 next-lesson:
   en: next lesson
   es: siguiente lección
@@ -558,37 +654,44 @@ contents:
   es: Contenidos
   fr: Contenus
   pt: Conteúdos
+  ua: Contents
 lesson-difficulty:
   0:
     en: Very Low
     es: Muy Baja
     fr: Très facile
     pt: Muito baixo
+    ua: Very Low
   1:
     en: Low
     es: Baja
     fr: Facile
     pt: Baixo
+    ua: Low
   2:
     en: Medium
     es: Media
     fr: Moyen
     pt: Médio
+    ua: Medium
   3:
     en: High
     es: Alta
     fr: Difficile
     pt: Alto
+    ua: High
 lesson:
   en: lessons
   es: lecciones
   fr: leçons
   pt: lições
+  ua: lessons
 donate:
   en: Support PH
   es: Apoyar PH
   fr: Soutenir PH
   pt: Apoie o PH
+  ua: Support PH
 donation-alert:
   en: |
     ## Donate today!
@@ -677,11 +780,13 @@ and:
   es: y
   fr: et
   pt: e
+  en: and
 by:
   en: by
   es: por
   fr: par
   pt: por
+  en: by
 reviewed:
   en: reviewed
   es: revisado
@@ -697,6 +802,8 @@ python-warning:
     Cette leçon a été écrite en utilisant Python v. 2.x. Le code peut ne pas être compatible avec les versions les plus récentes de Python. Merci de consulter la leçon "[Python Introduction and Installation](/en/lessons/introduction-and-installation)" (en anglais) qui fournit des instructions pour installer Python 2.x en plus des versions plus récentes.
   pt: |
      Esta lição foi escrita usando o Python v. 2.x. O código pode não ser compatível com as versões mais recentes do Python. "[Introdução ao Python e instalação](/pt/licoes/introdução-e-instalacao)" fornece instruções sobre como instalar o Python 2.x, tal como versões mais recentes.
+  ua: |
+    This lesson was written using Python v. 2.x. Code may not be compatible with newer versions of Python. "[Python Introduction and Installation](/lessons/introduction-and-installation)" provides instructions for how you can install Python 2.x alongside newer versions.
 
 # Project Team Page
 project-team-roles:
@@ -732,11 +839,13 @@ title-open-quote:
   es: '"'
   fr: '«&#x202F;'
   pt: '"'
+  ua: '"'
 title-close-quote:
   en: ',"'
   es: '",'
   fr: '&#x202F;»,'
   pt: '",'
+  ua: ',"'
 available-lesson:
   en: Available in
   es: Disponible en
@@ -773,6 +882,7 @@ language-name-abbreviation:
     es: ES
     fr: FR
     pt: PT
+    ua: EN
 
 peer-review:
   en: Peer-reviewed
@@ -786,17 +896,20 @@ about-the:
   es: Acerca
   fr: À propos
   pt: Sobre
+  ua: About the
 the-authors:
   singular:
     en: author
     es: del autor
     fr: de l'auteur(e)
     pt: o(a) autor(a)
+    ua: author
   plural:
     en: authors
     es: de los autores
     fr: des auteur(e)s
     pt: os(as) autores(as)
+    ua: authors
 
 # Home Page
 project-summary:
@@ -818,6 +931,7 @@ background_color:
   es: "#535D7F"
   fr: "#3D7C81"
   pt: "rgb(136 104 20)"
+  ua: "#444444"
 
 managing_editor:
   en: Alex Wermer-Colan
