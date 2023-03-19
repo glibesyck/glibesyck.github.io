@@ -1,31 +1,29 @@
 ---
-title:  "Дослідження та аналіз мережевих даних за допомогою Python"
+title: "Дослідження та аналіз мережевих даних за допомогою Python"
 authors:
-- John R. Ladd
-- Jessica Otis
-- Christopher N. Warren
-- Scott Weingart
+  - John R. Ladd
+  - Jessica Otis
+  - Christopher N. Warren
+  - Scott Weingart
 collection: lessons
 layout: lesson
 date: 2017-06-16
 reviewers:
-- Elisa Beshero-Bondar
-- Anne Chao
-- Qiwei Li
+  - Elisa Beshero-Bondar
+  - Anne Chao
+  - Qiwei Li
 editors:
-- Brandon Walsh
+  - Brandon Walsh
 translator:
-- Орися Віра
+  - Орися Віра
 translation-editor:
-- Гліб Солоджук
+  - Гліб Солоджук
 difficulty: 2
 review-ticket: https://github.com/programminghistorian/ph-submissions/issues/92
-layout: lesson
-collection: lessons
 slug: exploring-and-analyzing-network-data-with-python-ukr
 activity: analyzing
 topics: [network-analysis]
-date: 2017-08-23
+translation_date: 2017-08-23
 abstract: "Цей урок представляє мережеві метрики та те, як робити висновки з них під час роботи з гуманітарними даними. Ви дізнаєтесь, як використовувати пакет NetworkX Python для створення та роботи з цією мережевою статистикою."
 original: exploring-and-analyzing-network-data-with-python
 avatar_alt: Train tracks intersecting
