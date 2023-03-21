@@ -15,9 +15,8 @@ reviewers:
   - José Luis Losada
   - Riva Quiroga
 translator:
-  - Тарас Назарук
-translation-editor:
   - Олександр Корман
+  - Тарас Назарук
 review-ticket: https://github.com/programminghistorian/ph-submissions/issues/426
 difficulty: 2
 activity: transforming
@@ -49,9 +48,9 @@ Map Warper був розроблений для геоприв’язки іст
 
 Перш ніж почати прив'язувати відскановану мапу, важливо розуміти місця, які зображені на ній, а також історичний контекст складання мапи. Не всі історичні мапи підходять для геоприв’язки. Мапа повинна містити достатньо інформації, щоб користувач міг впевнено визначити координати широти і довготи або зіставити її з мапою геоінформаційних систем (ГІС), використовуючи фізичні об'єкти. Часто потрібно дослідити розташування історичних місць та елементів, які вже не існують, і прийняти засноване на наявній інформації рішення щодо їхнього правильного розміщення. Деякі мапи можуть не містити достатньо геоінформації, а при геоприв’язці можуть бути настільки викривлені, що стануть нерозбірливими або неточними.
 
-{% include figure.html filename="figure1.png" alt="A historical map warped into an irregular quadrilateral shape, and overlaid onto a larger-scale contemporary map" caption="Зображення 1: A map too warped to be used effectively." %}
+{% include figure.html filename="figure1.png" alt="A historical map warped into an irregular quadrilateral shape, and overlaid onto a larger-scale contemporary map" caption="Зображення 1: При занадто викривленій проекції, використання мапи стає неефективним." %}
 
-[Масштаб](https://perma.cc/LD2A-88X9), роздільна здатність і [проекція](https://perma.cc/CYD5-CCQM) відсканованої карти також є важливими аспектами при виборі історичної мапи для геоприв'язки. Дрібномасштабні мапи, як правило, не підходять для високодеталізованої геоприв'язки і можуть викликати проблеми з відображенням точного розташування об'єктів. При виборі або скануванні історичної мапи для геоприв'язки найкраще використовувати мапу, яка відсканована з високою роздільною здатністю (300 dpi або більше), щоби при збільшенні та зменшенні масштабу можна було легко побачити елементи на мапі. Також найкраще використовувати ту саму проекцію, що й на історичній карті, щоб звести до мінімуму неточності. Геоприв'язка мапи в неправильній проекції може призвести до невідповідності між історичною та поточною мапами, розтягування ліній, фігур і відстані між об'єктами. Map Warper не надає можливості перепроектувати картографічні дані; якщо вам не вдається отримати розбірливу мапу або якщо ви вимірюєте відстань, вам може знадобитися більш досконале програмне забезпечення ГІС, таке як QGIS, яке дозволить вам точно вказати картографічні проекції. Для більш детальної інформації про найкращі практичні підходи до геоприв'язки див. [список рекомендацій від Esri](https://perma.cc/GF85-4YF6).
+[Масштаб](https://perma.cc/LD2A-88X9), роздільна здатність і [проекція](https://perma.cc/CYD5-CCQM) відсканованої карти також є важливими аспектами при виборі історичної мапи для геоприв'язки. Дрібномасштабні мапи, як правило, не підходять для високодеталізованої геоприв'язки і можуть викликати проблеми з відображенням точного розташування об'єктів. При виборі або скануванні історичної мапи для геоприв'язки найкраще використовувати мапу, яка відсканована з високою роздільною здатністю (300 dpi або більше), щоби при збільшенні та зменшенні масштабу можна було легко побачити елементи на мапі. Також найкраще використовувати ту саму проекцію, що й на історичній карті, щоб звести до мінімуму неточності. Геоприв'язка мапи в неправильній проекції може призвести до невідповідності між історичною та поточною мапами, розтягування ліній, фігур і відстані між об'єктами. Map Warper не надає можливості перепроектувати картографічні дані; якщо вам не вдається отримати розбірливу мапу або якщо ви вимірюєте відстань, вам може знадобитися більш досконале програмне забезпечення ГІС, таке як QGIS, яке дозволить вам точно вказати картографічні проекції.
 
 Кілька навідних запитань, які варто поставити:
 
@@ -84,7 +83,7 @@ Map Warper був розроблений для геоприв’язки іст
 
 ## Редагування
 
-На наступному екрані вам буде запропоновано ввести описову інформацію, яка полегшить пошук мапи (так звані [метадані](https://perma.cc/966P-PQ7L)). Поле метаданих також доступне на вкладці Метадані. Попри те, що обов'язковим є лише поле Title (Назва), зазвичай рекомендується надавати якомога більше інформації, щоб інші користувачі могли дізнатися більше про джерело вашої відсканованої мапи, до якої ви здійснюєте геоприв'язку. Заповніть метадані на основі наданої вам інформації про історичну мапу, з якою ви працюєте. Для плану Львова 1890 року ви можете знайти метадані поруч з мапою порталі [Національної бібліотеки Польщі Polona.pl](). З огляду на спільну та колективну сутність Map Warper, ми рекомендуємо вам додавати наступні метадані:
+На наступному екрані вам буде запропоновано ввести описову інформацію, яка полегшить пошук мапи (так звані [метадані](https://perma.cc/966P-PQ7L)). Поле метаданих також доступне на вкладці Метадані. Попри те, що обов'язковим є лише поле Title (Назва), зазвичай рекомендується надавати якомога більше інформації, щоб інші користувачі могли дізнатися більше про джерело вашої відсканованої мапи, до якої ви здійснюєте геоприв'язку. Заповніть метадані на основі наданої вам інформації про історичну мапу, з якою ви працюєте. Для плану Львова 1890 року ви можете знайти метадані поруч з мапою порталі [Національної бібліотеки Польщі Polona.pl](https://polona.pl/item/plan-krolewskiego-stolecznego-miasta-lwowa-z-enklawa-jalowiec-takze-maszow-lwow-ii,NzU2MDc2Njc/0/#info:metadata). З огляду на спільну та колективну сутність Map Warper, ми рекомендуємо вам додавати наступні метадані:
 
 - Title (Назва): Назва та реєстраційний номер. Це впорядковує інформацію, щоб полегшити пошук мапи в її оригінальному репозиторії.
 - Description (Опис): Довідкова інформація до картографічного зображення.
@@ -127,7 +126,7 @@ Map Warper був розроблений для геоприв’язки іст
 
 - **Export (Експорт):** надає різні варіанти та формати експорту
 
-{% include figure.html filename="figure3.jpg" alt="Screenshot of Map Warper's interface, with the Show, Edit, Rectify, Align, Preview and Export tabs at upper left. In the center of the interface is a scanned historical map, depicting North Carolina and South Carolina divided into counties and coloured variously in pink, green and pale yellow" caption="Зображення 3. Map Warper interface." %}
+{% include figure.html filename="figure3.jpg" alt="Screenshot of Map Warper's interface, with the Show, Edit, Rectify, Align, Preview and Export tabs at upper left. In the center of the interface is a scanned historical map, depicting North Carolina and South Carolina divided into counties and coloured variously in pink, green and pale yellow" caption="Зображення 3. Робоча панель Map Warper." %}
 
 ## Геоприв’язка вашої мапи
 
@@ -190,17 +189,17 @@ x,y,lon,lat
 3\. Після того, як ви освоїтеся з мапою, виберіть першу опорну точку. Почніть з історичної мапи і виберіть локацію &mdash;, яку буде відносно легко знайти, наприклад, місто &mdash;.
 4\. Потім натисніть на зелену позначку опорної точки на сучасній мапі і знайдіть те саме місце, щоб вони збігалися.
 
-    {% include figure.html filename="figure4.jpg" alt="Screenshot of the Rectify tab of Map Warper's interface, displaying a historical map on the left alongside a contemporary map on the right. The two maps delineate the same geographical region, at roughly the same scale. The two maps are marked with a set of closely-matching marker points." caption="Зображення 4. Match up your control points." %}
+    {% include figure.html filename="figure4.jpg" alt="Screenshot of the Rectify tab of Map Warper's interface, displaying a historical map on the left alongside a contemporary map on the right. The two maps delineate the same geographical region, at roughly the same scale. The two maps are marked with a set of closely-matching marker points." caption="Зображення 4. Екран для зведення опорних точок для обох мап." %}
 
 5\. Якщо ви не натиснете кнопку Add Control Point (Додати Опорну Точку), наступного разу, коли ви натиснете на мапу, додана вами опорна точка переміститься. Ця функція дає вам змогу гнучко налаштовувати точки під час додавання, однак це може вас заплутати, якщо ви не помітите, що ви не натиснули кнопку Додати Опорну Точку, через що ваша точка переміститься.
 
 6\. Додайте принаймні 4 або 5 точок. Хорошою стратегією є розміщення точок на історичній карті, зосереджуючи увагу на державних кордонах, річках, лініях областей і великих містах. Якщо вам потрібно видалити опорну точку, натисніть на “Control Points” ("Опорні точки") на Control Panel (Панелі Керування) під мапою.
 
-    {% include figure.html filename="mapwarper_controlpoints.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel with the Control Points button highlighted" caption="Зображення 5. Select Control Points in the Control panel." %}
+    {% include figure.html filename="mapwarper_controlpoints.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel with the Control Points button highlighted" caption="Зображення 5. Виберіть “Опорні точки” у “Панелі керування”." %}
 
 7\. Вибравши Control Points (Опорні Точки), ви побачите всі додані вами точки, а також зможете видалити будь-які точки, які ви бажаєте переробити. Окрім того, ви можете змінювати точки широти і довготи вручну.
 
-    {% include figure.html filename="mapwarper_controlpoints_rmserrordelete.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel where a list of Control Points are organised in table-format. Two columns of the table are highlighted and labelled: 'RMS Error' and 'Delete control points." caption="Зображення 6. Deleting control points and the RMS error." %}
+    {% include figure.html filename="mapwarper_controlpoints_rmserrordelete.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel where a list of Control Points are organised in table-format. Two columns of the table are highlighted and labelled: 'RMS Error' and 'Delete control points." caption="Зображення 6. Видалення опорних точок та КСКП викривлень." %}
 
 <div class="alert alert-info">
 Примітка: Ви побачите, що для кожної опорної точки є значення Похибки. Щоби оцінити трансформації різних опорних точок, Map Warper використовує обчислення Кореневої Середньоквадратичної похибки (КСКП), Root Mean Square. КСКП дає приблизне уявлення про те, наскільки ваші опорні точки узгоджені одна з одною щодо трансформації мапи, й оцінює, наскільки викривленою буде ваша мапа. Високі значення КСКП вказують на те, що ваші опорні точки менш узгоджені між собою, тоді як низьке значення КСКП вказує на більшу узгодженість і менші відхилення. Загалом рекомендується підтримувати низькі значення похибок і замінювати або видаляти опорні точки з високими значеннями. Попри те, що КСКП є хорошим способом визначити точність трансформації, вам завжди слід повторно оцінювати, наскільки добре ваша відсканована мапа відповідає сучасній мапі ГІС. Для отримання додаткової інформації про КСКП, будь ласка, перегляньте розділ Esri про інтерпретацію Кореневої Середньоквадратичної похибки в їхньому <a href="https://perma.cc/L4VD-VPVV">Огляді геоприв'язки</a>.
@@ -208,19 +207,19 @@ x,y,lon,lat
 
 8\. Коли у вас достатньо точок і ви вважаєте, що вони добре розподілені на вашій історичній мапі, натисніть кнопку Warp Image! (Зв’язати зображення!) внизу сторінки. Геоприв'язка мап вимагає практики. Ви можете виявити, що ваша ректифікована мапа перетворюється у нечитабельну, викривлену мапу. Ми радимо вам повторити кроки 7-9, беручи до уваги згадані вище найкращі способи геоприв’язки, такі як визначення великих міст, доріг, струмків і річок, які ви можете упевнено ідентифікувати.
 
-    {% include figure.html filename="mapwarper_warpbutton.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel with the Warp Image! button highlighted" caption="Зображення 7. Click Warp Image! to rectify your map." %}
+    {% include figure.html filename="mapwarper_warpbutton.png" alt="Cropped screenshot of Map Warper's interface depicting a section of the Control Panel with the Warp Image! button highlighted" caption="Зображення 7. Натисніть “Warp Image!” (Зв’язати зображення!) для ректифікації мапи." %}
 
 9\. Тепер ви побачите мапу, накладену поверх OpenStreetMap.
 
-    {% include figure.html filename="figure8.png" alt="Screenshot of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. At the upper left, there is a four-way navigation tool, and a slider-style zoom tool. At the upper right, there are icons including a marker point, a hand, and a four-way navigation arrow. A semi-opaque, information panel at upper right indicates that the base layer originates from OpenStreetMap and the overlay is a warped map." caption="Зображення 8. Georeferenced map in OpenStreetMap." %}
+    {% include figure.html filename="figure8.png" alt="Screenshot of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. At the upper left, there is a four-way navigation tool, and a slider-style zoom tool. At the upper right, there are icons including a marker point, a hand, and a four-way navigation arrow. A semi-opaque, information panel at upper right indicates that the base layer originates from OpenStreetMap and the overlay is a warped map." caption="Зображення 8. Геопривя’зка мапи з OpenStreetMap." %}
 
 10\. Ви можете переглянути базову мапу супутникових знімків або звичайний шар OpenStreetMap, який ми використовували.
 
-    {% include figure.html filename="figure9.jpg" alt="Screenshot of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. At the upper left, there is a four-way navigation tool, and a slider-style zoom tool. At the upper right, there are icons including a marker point, a hand, and a four-way navigation arrow. A semi-opaque, information panel at upper right indicates that the base layer originates from Mapbox Satellite and the overlay is a warped map." caption="Зображення 9. Georeferenced map in satellite view." %}
+    {% include figure.html filename="figure9.jpg" alt="Screenshot of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. At the upper left, there is a four-way navigation tool, and a slider-style zoom tool. At the upper right, there are icons including a marker point, a hand, and a four-way navigation arrow. A semi-opaque, information panel at upper right indicates that the base layer originates from Mapbox Satellite and the overlay is a warped map." caption="Зображення 9. Геоприв’язка мапи із супутниковим зображенням." %}
 
 11\. Перейдіть на вкладку Preview (Попередній перегляд), щоб переглянути мапу з географічною прив'язкою у збільшеному вигляді. Щоби мати уявлення, наскільки точно було застосовано географічну прив’язку, використовуйте зміну прозорості мапи за допомогою повзунка.
 
-    {% include figure.html filename="figure10.jpg" alt="Screenshot of the Preview tab of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. A slider bar at the bottom of the interface is adjusted from the leftmost position, slightly towards the right." caption="Зображення 10. Map Warper Preview." %}
+    {% include figure.html filename="figure10.jpg" alt="Screenshot of the Preview tab of Map Warper's interface, with the scanned historical map of North Carolina and South Carolina overlaid onto a contemporary 'base layer' map of the same geographical region, at the same scale. A slider bar at the bottom of the interface is adjusted from the leftmost position, slightly towards the right." caption="Зображення 10. Перегляд прив’язаної мапи." %}
 
 ## Cropping (Кадрування)
 
@@ -270,7 +269,12 @@ https://mapwarper.net/maps/tile/40217/{z}/{x}/{y}.png
 
 Технічні етапи, розглянуті в цьому занятті, корисні не лише для географічної прив'язки історичних карт, але й для роздумів про чіткі просторові зв'язки між місцем, історією та суб'єктами. Вони також корисні для поєднання цифрової мапи з даними з інших першоджерел (офіційних документів, статистики, фотографій, свідчень і т.д.). У такому разі заняття є вступом до вивчення можливостей використання такого типу матеріалу – історичних перспектив соціальних вимірів, які показані в географічно прив'язаному об'єкті – що й надалі стимулюватиме сферу просторової гуманітаристики.
 
-## Endnotes
+## Нотатки
 
-[^2]: The original Spanish tutorial uses a 1933 coffee map of the Republic of Colombia from Mapoteca Digital de la Biblioteca Nacional de Colombia, published by the Federación Nacional de Cafeteros de Colombia (National Federation Colombian Coffee Growers). This lesson substitutes the map in order to provide English-speaking users with a map with geographical locations in English.
+[^2]:
+    Оригінальний урок створено іспанською мовою. У ньому використовують джерела з Biblioteca Nacional de Colombia’s Mapoteca Digital, Cartografía de Bogotá de la Universidad Nacional de Colombia, and Paisajes coloniales: redibujando los territorios andinos en el siglo XVII de la Universidad de los Andes (Colombia).
+    Оригінальний урок використовує мапу вирощування кави в Республіці Колумбія, створену у 1933 році, яка зберігається у Mapoteca Digital de la Biblioteca Nacional de Colombia, опублікована the Federación Nacional de Cafeteros de Colombia (Національна федерація колумбійських виробників кави).
+    На українську урок перекладено з його англійської версії, в якій було використано мапу з англійськими назвами місцевостей.
+    Для наближення локального контексту, в українській версії уроку використано мапу Львова 1890 року, а також змінено окремі фрагменти тексту.
+
 [^3]: **Rectify (Ректифікація\Вирівнювання)** - процес трансформації, який дозволяє спроектувати два або більше зображень в одну спільну площину зображення.

@@ -830,7 +830,7 @@ suggested-citation:
   es: Cita sugerida
   fr: Pour citer
   pt: Citação sugerida
-  ua: Suggested Citation
+  ua: Рекомендоване цитування
 journal-title:
   en: Programming Historian
   es: Programming Historian en español
@@ -911,20 +911,20 @@ about-the:
   es: Acerca
   fr: À propos
   pt: Sobre
-  ua: About the
+  ua: Про
 the-authors:
   singular:
     en: author
     es: del autor
     fr: de l'auteur(e)
     pt: o(a) autor(a)
-    ua: author
+    ua: автора (оригінального уроку)
   plural:
     en: authors
     es: de los autores
     fr: des auteur(e)s
     pt: os(as) autores(as)
-    ua: authors
+    ua: авторів (оригінального уроку)
 
 # Home Page
 project-summary:
