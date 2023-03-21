@@ -107,13 +107,6 @@ Map Warper був розроблений для геоприв’язки іст
 
 Інтерфейс організовано у вигляді наступних вкладок:
 
-- **Show:** displays only your map image
-- **Edit:** allows you to edit the descriptive text (metadata)
-- **Rectify:** used for the georeferencing itself
-- **Align:** a useful tool if you are stitching together multiple maps
-- **Preview:** shows your map overlaid on a modern base map
-- **Export:** gives you a variety of export options and formats
-
 - **Show (Перегляд):** відображає лише зображення вашої мапи
 
 - **Edit (Редагування):** дозволяє редагувати описовий текст (метадані)
