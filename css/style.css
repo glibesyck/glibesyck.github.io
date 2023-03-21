@@ -41,7 +41,7 @@ Color Styles
 
   body {
     /* font-family: 'Quattrocento', Verdana, sans-serif;  */
-    font-family: 'Quattrocento', 'Playfair Display', sans-serif; 
+    font-family: 'Quattrocento', 'Open Sans', sans-serif; 
     font-size:16px;
     background-color: var(--bg-color);
   }
@@ -532,7 +532,7 @@ Lessons Index
 
   .lesson-description h2.title {
     /* font: 1.2rem/1.3rem 'Crete Round', serif; */
-    font: 1.2rem/1.3rem 'Crete Round', 'Playfair Display', serif;
+    font: 1.2rem/1.3rem 'Crete Round', 'Open Sans';
     margin:0 0 .8rem 0;
     clear:none;
   }
