@@ -44,7 +44,7 @@ doi: 10.46430/phen0064
   - Важливі або центральні вершини, і
   - Спільноти та підгрупи.
 
-**n.b.:** це урок для вивчення статистики та метрики-показників мережі. Тому ми зосередимося на способах аналізу мереж, не візуалізуючи їх. Ймовірно, вам знадобиться поєднання візуалізації та мережевих метрик-показників у вашому власному проекті, тому ми рекомендуємо цю статтю як додаток до [цього попереднього уроку Programming Historian](/lessons/creating-network-diagrams-from-historical-sources).
+**Примітка:** це урок для вивчення статистики та метрики-показників мережі. Тому ми зосередимося на способах аналізу мереж, не візуалізуючи їх. Ймовірно, вам знадобиться поєднання візуалізації та мережевих метрик-показників у вашому власному проекті, тому ми рекомендуємо цю статтю як додаток до [цього попереднього уроку Programming Historian](/lessons/creating-network-diagrams-from-historical-sources).
 
 ## Пререквізити
 
@@ -117,24 +117,25 @@ pip3 install networkx==3.0
 import csv
 from operator import itemgetter
 import networkx as nx
-from networkx.algorithms import community #This part of networkx, for community detection, needs to be imported separately.
+from networkx.algorithms import community # Цю частину networkx, для виявлення спільноти, потрібно імпортувати окремо.
 ```
 
 Тепер ви можете дати команду програмі читати ваші CSV файли і отримувати дані, які вам потрібно. За іронією долі, для читання файлів і реорганізації даних переважно потрібен більш складний код, ніж той, що потрібен для функцій, які використовуються для аналізу соціальних мереж, тому, будь ласка, залишайтеся з нами впродовж першого блоку коду. Ось набір команд для відкриття та читання наших файлів nodelist і edgelist:
 
 ```python
-with open('lviv_network_nodes.csv', 'r', encoding = "utf-8") as nodecsv: # Open the file
-    nodereader = csv.reader(nodecsv, delimiter= ",") # Read the csv
-    # Retrieve the data (using Python list comprhension and list slicing to remove the header row, see footnote 3)
+with open('lviv_network_nodes.csv', 'r', encoding = "utf-8") as nodecsv: # Відрийте файл
+    nodereader = csv.reader(nodecsv, delimiter= ",") # Прочитайте csv-файл
+
+    # Отримайте дані (використовуючи списковий вираз Python і виділення частини списку, щоб видалити рядок заголовка, дивіться виноску 3)
     nodes = [n for n in nodereader][1:]
 
-node_names = [n[0] for n in nodes] # Get a list of only the node names
+node_names = [n[0] for n in nodes] # Отримайте список лише назв вершин
 
-with open('lviv_network_edges.csv', 'r', encoding = "utf-8") as edgecsv: # Open the file
-    edgereader = csv.reader(edgecsv, delimiter= ";") # Read the csv
+with open('lviv_network_edges.csv', 'r', encoding = "utf-8") as edgecsv: # Відрийте файл
+    edgereader = csv.reader(edgecsv, delimiter= ";") # Прочитайте csv-файл
     edges = [e for e in edgereader][1:]  Retrieve the data
 
-edge_names = [[e[0], e[1]] for e in edges] # Get a list of only the edge source and target
+edge_names = [[e[0], e[1]] for e in edges] # Отримайте список лише джерела та цілі ребер
 ```
 
 Цей код виконує функції, подібні до тих, що описані в [цьому уроці](/lessons/working-with-text-files), але використовує модуль CSV для завантаження ваших вершин і ребер. Пізніше ви можете повернутися і отримати більше інформації про вершини, але наразі вам потрібні дві речі: повний список вершин і список пар ребер (як кортежі вершин)[^slicing]. Це форми, які NetworkX знадобляться для створення «об’єкту графа», спеціального типу даних NetworkX, про який ви дізнаєтеся в наступному розділі.
@@ -155,7 +156,7 @@ print(len(edges))
 
 ## Основи NetworkX: створення графа
 
-Тепер у вас є дані у вигляді двох списків Python: списку вершин `node_names` і списку ребер `edge_names`. У NetworkX ви можете об’єднати ці два списки в один мережевий об’єкт, який розуміє, як взаємопов’язані вершини та ребра. Цей об’єкт називається **Graph** (граф), посилаючись на один із загальних термінів для даних, організованих у вигляді мережі [nota bene / примітка. це не стосується жодного візуального представлення даних. Graph тут використовується суто в математичному сенсі мережевого аналізу.] Спочатку ви повинні _створити_ об’єкт Graph за допомогою такої команди:
+Тепер у вас є дані у вигляді двох списків Python: списку вершин `node_names` і списку ребер `edge_names`. У NetworkX ви можете об’єднати ці два списки в один мережевий об’єкт, який розуміє, як взаємопов’язані вершини та ребра. Цей об’єкт називається **Graph** (граф), посилаючись на один із загальних термінів для даних, організованих у вигляді мережі [Примітка. це не стосується жодного візуального представлення даних. Graph тут використовується суто в математичному сенсі мережевого аналізу.] Спочатку ви повинні _створити_ об’єкт Graph за допомогою такої команди:
 
 ```python
 G = nx.Graph()
@@ -190,29 +191,30 @@ Graph with 149 nodes and 114 edges
 import csv
 from operator import itemgetter
 import networkx as nx
-from networkx.algorithms import community #This part of networkx, for community detection, needs to be imported separately.
+from networkx.algorithms import community # Цю частину networkx, для виявлення спільноти, потрібно імпортувати окремо.
 
-with open('lviv_network_nodes.csv', 'r', encoding = "utf-8") as nodecsv: # Open the file
-    nodereader = csv.reader(nodecsv, delimiter= ",") # Read the csv
-    # Retrieve the data (using Python list comprhension and list slicing to remove the header row, see footnote 3)
+with open('lviv_network_nodes.csv', 'r', encoding = "utf-8") as nodecsv: # Відрийте файл
+    nodereader = csv.reader(nodecsv, delimiter= ",") # Прочитайте csv-файл
+
+    # Отримайте дані (використовуючи списковий вираз Python і виділення частини списку, щоб видалити рядок заголовка, дивіться виноску 3)
     nodes = [n for n in nodereader][1:]
 
-node_names = [n[0] for n in nodes] # Get a list of only the node names
+node_names = [n[0] for n in nodes] # Отримайте список лише назв вершин
 
-with open('lviv_network_edges.csv', 'r', encoding = "utf-8") as edgecsv: # Open the file
-    edgereader = csv.reader(edgecsv, delimiter= ";") # Read the csv
+with open('lviv_network_edges.csv', 'r', encoding = "utf-8") as edgecsv: # Відрийте файл
+    edgereader = csv.reader(edgecsv, delimiter= ";") # Прочитайте csv-файл
     edges = [e for e in edgereader][1:]  Retrieve the data
 
-edge_names = [[e[0], e[1]] for e in edges] # Get a list of only the edge source and target
+edge_names = [[e[0], e[1]] for e in edges] # Отримайте список лише джерела та цілі ребер
 
-# Print the number of nodes and edges in our two lists
+# Виведіть кількість вершин і ребер у наших двох списках
 print(len(node_names))
 print(len(edge_names))
 
-G = nx.Graph() # Initialize a Graph object
-G.add_nodes_from(node_names) # Add nodes to the Graph
-G.add_edges_from(edge_names) # Add edges to the Graph
-print(G) # Print information about the Graph
+G = nx.Graph() # Ініціалізуйте об’єкт Graph
+G.add_nodes_from(node_names) # Додайте вершини до графа
+G.add_edges_from(edge_names) # Додайте ребра до графа
+print(G) # Виведіть інформацію про граф
 ```
 
 Досі ви зчитували дані вершин і ребер у Python із файлів CSV, а потім підраховували ці вершини та ребра. Після цього ви створили об’єкт Graph за допомогою NetworkX і завантажили свої дані в цей об’єкт.
@@ -231,17 +233,17 @@ relation_dict = {}
 Тепер ми можемо прокрутити наш список вершин та ребер і додати відповідні елементи до кожного словника. Ми робимо це, знаючи заздалегідь позицію або індекс кожного атрибута. Оскільки наш файл `lviv_network_nodes.csv` добре організований, ми знаємо, що ім’я людини завжди буде першим у списку: індекс 0, оскільки в Python ви завжди починаєте підрахунок з 0. Стать людини буде індексована одиницею. Аналогічні міркування стосуються і файлу `lviv_network_edges.csv`. Тому ми можемо будувати наші словники так:[^brackets]
 
 ```python
-for node in nodes: # Loop through the list of nodes, one row at a time
-    gender_dict[node[0]] = node[1] # Access the correct item, add it to the corresponding dictionary
+for node in nodes: # Пробіжіться по списку вершин, по одному рядку за раз
+    gender_dict[node[0]] = node[1] # Доступіться до правильного об’єкта, додайте його до відповідного словника
 
-for edge in edges: # Loop through the list of edges, one row at a time
-    relation_dict[(edge[0], edge[1])] = edge[2] # Access the correct item, add it to the corresponding dictionary
+for edge in edges: # Пробіжіться по списку ребер, по одному рядку за раз
+    relation_dict[(edge[0], edge[1])] = edge[2] # Доступіться до правильного об’єкта, додайте його до відповідного словника
 ```
 
 Тепер у вас є набір словників, які можна використовувати для додавання атрибутів до вершин у вашому об’єкті Graph. Функції `set_node_attributes` та `set_edge_attributes` приймає три змінні: граф, до якого ви додаєте атрибут, словник пар ідентифікатор-атрибут та ім’я нового атрибута. Код для додавання ваших шести атрибутів виглядає так:
 
 ```python
-# Add each dictionary as a node attribute to the Graph object
+# Додайте кожен словник як атрибут вершини до об’єкта Graph
 nx.set_node_attributes(G, gender_dict, 'gender')
 nx.set_edge_attributes(G, relation_dict, 'relation')
 ```
@@ -249,7 +251,7 @@ nx.set_edge_attributes(G, relation_dict, 'relation')
 Тепер усі ваші вершини мають атрибут статі, а ребра атрибут типу зв'язку і ви можете отримати до них доступ у будь-який час. Наприклад, ви можете отримати стать людей у мережі, які репрезентовані вершинами, прокрутивши їх і отримавши доступ до атрибута статі, ось так:
 
 ```python
-# Loop through each node, to access and print all the "gender" attributes
+# Перегляньте кожну вершину, щоб отримати доступ до всіх атрибутів “стать” і виведіть їх
 for n in G.nodes():
     print(n, G.nodes[n]['gender'])
 ```
@@ -267,21 +269,21 @@ Palachna Bildachowna Ruthena _ukiani Wasilowic conj. cv. L. female
 Наведені вище кроки є звичайним методом додавання атрибутів до вершин, які ви повторно використовуватимете пізніше в уроці. Ось підсумок кодового блоку з цього розділу:
 
 ```python
-# Create an empty dictionary for each attribute
+# Створіть порожній словник для кожного атрибута
 gender_dict = {}
 relation_dict = {}
 
-for node in nodes: # Loop through the list of nodes, one row at a time
-    gender_dict[node[0]] = node[1] # Access the correct item, add it to the corresponding dictionary
+for node in nodes: # Пробіжіться по списку вершин, по одному рядку за раз
+    gender_dict[node[0]] = node[1] # Доступіться до правильного об’єкта, додайте його до відповідного словника
 
-for edge in edges: # Loop through the list of edges, one row at a time
-    relation_dict[(edge[0], edge[1])] = edge[2] # Access the correct item, add it to the corresponding dictionary
+for edge in edges: # Пробіжіться по списку ребер, по одному рядку за раз
+    relation_dict[(edge[0], edge[1])] = edge[2] # Доступіться до правильного об’єкта, додайте його до відповідного словника
 
-# Add each dictionary as a node attribute to the Graph object
+# Додайте кожен словник як атрибут вершини до об’єкта Graph
 nx.set_node_attributes(G, gender_dict, 'gender')
 nx.set_edge_attributes(G, relation_dict, 'relation')
 
-# Loop through each node, to access and print all the "gender" attributes
+# Перегляньте кожну вершину, щоб отримати доступ до всіх атрибутів “стать” і виведіть їх
 for n in G.nodes():
     print(n, G.nodes[n]['gender'])
 ```
@@ -352,17 +354,16 @@ print("Length of that path:", len(agnes_abraam_path)-1)
 Оскільки немає доступного шляху між вершинами одного компонента та вершинами іншого, `nx.diameter()` повертає помилку «незв'язний». Ви можете виправити це, спершу з’ясувавши, чи ваш граф «з’єднаний» (тобто одна компонента зв’язності), і, якщо граф не з’єднаний, знайдіть найбільший компонент і обчисліть діаметр лише для цього компонента. Ось код:
 
 ```python
-# If your Graph has more than one component, this will return False:
+#Якщо ваш графік містить більше одного компонента, це поверне значення False:
 print(nx.is_connected(G))
 
-# Next, use nx.connected_components to get the list of components,
-# then use the max() command to find the largest one:
+# Далі використайте nx.connected_components, щоб отримати список компонентів,
+# згодом використайте the max() команду, щоб знайти найдовший:
 components = nx.connected_components(G)
 largest_component = max(components, key=len)
 
-# Create a "subgraph" of just the largest component
-# Then calculate the diameter of the subgraph, just like you did with density.
-#
+# Створіть «підграф» лише найбільшого компонента
+# Потім обчисліть діаметр цього підграфа, як ви робили з щільністю.
 
 subgraph = G.subgraph(largest_component)
 diameter = nx.diameter(subgraph)
@@ -426,10 +427,10 @@ for d in sorted_degree[:20]:
 Ці два показники центральності навіть простіше виконувати, ніж степінь — їм не потрібно передавати список вершин, лише граф `G`. Ви можете запустити їх за допомогою цих функцій:
 
 ```python
-betweenness_dict = nx.betweenness_centrality(G) # Run betweenness centrality
-eigenvector_dict = nx.eigenvector_centrality(G) # Run eigenvector centrality
+betweenness_dict = nx.betweenness_centrality(G) # Виконайте міжцентральність
+eigenvector_dict = nx.eigenvector_centrality(G) # Виконайте центральність власного вектора
 
-# Assign each to an attribute in your network
+# Призначте кожен атрибут у вашій мережі
 nx.set_node_attributes(G, betweenness_dict, 'betweenness')
 nx.set_node_attributes(G, eigenvector_dict, 'eigenvector')
 ```
@@ -447,12 +448,12 @@ for b in sorted_betweenness[:20]:
 Ви помітите, що багато, але не всі, вершини з високим степенем також мають високу міжцентральність. Насправді, міжцентральність виводить двох Agnes Ganschornowa olim Joannis Ganschorn secund. nupt. vidua та Anna Lucae Woinar cv. L. conj. чиє значення було затемнене показником степеня центральності. Перевага виконання цих обчислень у Python полягає в тому, що ви можете швидко порівняти два набори обчислень. Що, якщо ви хочете знати, яка із вершин центральності з високою проміжністю мала низький степінь? Тобто: у яких проміжних вершин несподівано побачити високе значення міжцентральності? Ви можете використовувати комбінацію впорядкованих списків, наведених вище:
 
 ```python
-#First get the top 20 nodes by betweenness as a list
+# Спочатку отримайте перших 20 вершин з найвищим значенням міжцентральності як список
 top_betweenness = sorted_betweenness[:20]
 
-#Then find and print their degree
-for tb in top_betweenness: # Loop through top_betweenness
-    degree = degree_dict[tb[0]] # Use degree_dict to access a node's degree, see footnote 2
+# Потім знайдіть і виведіть їхній степінь
+for tb in top_betweenness: # Пробіжіться по списку `top_betweenness`
+    degree = degree_dict[tb[0]] # Використайте `degree_dict`, щоб отримати доступ до степеня вершити, див. виноску 2
     print("Name:", tb[0], "| Betweenness Centrality:", tb[1], "| Degree:", degree)
 ```
 
@@ -475,25 +476,25 @@ communities = community.greedy_modularity_communities(G)
 Метод `greedy_modularity_communities()` намагається визначити кількість спільнот, відповідних для графа, і групує всі вершини в підмножини на основі цих спільнот. На відміну від центральних функцій, наведений вище код не створить словник. Замість цього він створює список спеціальних «заморожених» об’єктів (подібних до списків). Для кожної групи є один набір, і набори містять імена людей у кожній групі. Щоб додати цю інформацію до вашої мережі вже відомим способом, ви повинні спочатку створити словник, який позначатиме кожну особу числовим значенням для групи, до якої вона належить:
 
 ```python
-modularity_dict = {} # Create a blank dictionary
-for i,c in enumerate(communities): # Loop through the list of communities, keeping track of the number for the community
-    for name in c: # Loop through each person in a community
-        modularity_dict[name] = i # Create an entry in the dictionary for the person, where the value is which group they belong to.
+modularity_dict = {} # Створіть пустий словник
+for i,c in enumerate(communities): # Перегляньте список спільнот, відстежуючи номер спільноти
+    for name in c: # Перегляньте кожного члена спільноти
+        modularity_dict[name] = i # Створіть запис у словнику для людини, де значенням є те, до якої групи вона належить
 
-# Now you can add modularity information like we did the other metrics
+# Тепер ви можете додати інформацію про модулярність, як ми робили з іншими показниками
 nx.set_node_attributes(G, modularity_dict, 'modularity')
 ```
 
 Як завжди, ви можете комбінувати ці заходи з іншими. Наприклад, ось як знайти вершини центральності власного вектора з найвищим у класі модулярності 0 (перший):
 
 ```python
-# First get a list of just the nodes in that class
+# Спочатку отримайте список лише вершин цього класу
 class0 = [n for n in G.nodes() if G.nodes[n]['modularity'] == 0]
 
-# Then create a dictionary of the eigenvector centralities of those nodes
+# Потім створіть словник центральності власних векторів цих вершин
 class0_eigenvector = {n:G.nodes[n]['eigenvector'] for n in class0}
 
-# Then sort that dictionary and print the first 5 results
+# Потім відсортуйте цей словник і виведіть перші 5 результатів
 class0_sorted_by_eigenvector = sorted(class0_eigenvector.items(), key=itemgetter(1), reverse=True)
 
 print("Modularity Class 0 Sorted by Eigenvector Centrality:")
@@ -506,9 +507,9 @@ for node in class0_sorted_by_eigenvector[:5]:
 У менших мережах, подібних до цієї, звичайним завданням є пошук і перелік усіх класів модулярності та їхніх членів[^modularity]. Ви можете зробити це, пройшовшись по списку `communities`:
 
 ```python
-for i,c in enumerate(communities): # Loop through the list of communities
-    if len(c) > 2: # Filter out modularity classes with 2 or fewer nodes
-        print('Class '+str(i)+':', list(c)) # Print out the classes and their members
+for i,c in enumerate(communities): # Перегляньте список спільнот
+    if len(c) > 2: # Відфільтруйте класи модулярності з 2 або менше вершинами
+        print('Class '+str(i)+':', list(c)) # Виведіть класи та їхніх учасників
 ```
 
 Зауважте, що в наведеному вище коді ви відфільтровуєте будь-які класи модулярності з двома або меншою кількістю вершин у рядку, якщо `len(c) > 2`. З візуалізації ви пам’ятаєте, що було багато маленьких компонентів мережі лише з двома вершинами. Модулярність знайде ці компоненти та розглядатиме їх як окремі класи (оскільки вони не пов’язані ні з чим іншим). Відфільтрувавши їх, ви отримаєте краще уявлення про більші класи модулярності в головному компоненті мережі.
